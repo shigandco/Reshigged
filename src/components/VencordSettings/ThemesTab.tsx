@@ -204,12 +204,9 @@ function ThemesTab() {
                 <Card className="vc-settings-card">
                     <Forms.FormTitle tag="h5">Find Themes:</Forms.FormTitle>
                     <div style={{ marginBottom: ".5em", display: "flex", flexDirection: "column" }}>
-                        <Link style={{ marginRight: ".5em" }} href="https://betterdiscord.app/themes">
-                            BetterDiscord Themes
-                        </Link>
+                        <Forms.FormText>{"["}this button was removed because even mentioning anything about D*vilb*o would cause a memory leak to happen{"]"}</Forms.FormText>
                         <Link href="https://github.com/search?q=discord+theme">GitHub</Link>
                     </div>
-                    <Forms.FormText>If using the BD site, click on "Download" and place the downloaded .theme.css file into your themes folder.</Forms.FormText>
                 </Card>
 
                 <Forms.FormSection title="Local Themes">

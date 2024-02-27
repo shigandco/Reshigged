@@ -78,7 +78,7 @@ function toCodeBlock(s: string) {
 async function printReport() {
     console.log();
 
-    console.log("# Vencord Report" + (CANARY ? " (Canary)" : ""));
+    console.log("# Reshigged  Report" + (CANARY ? " (Canary)" : ""));
 
     console.log();
 

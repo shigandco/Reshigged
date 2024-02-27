@@ -57,8 +57,8 @@ if (IS_VESKTOP || !IS_VANILLA) {
         try {
             if (getSettings().enableReactDevtools)
                 installExt("fmkadmapgofadopljbjfkapdkoienihi")
-                    .then(() => console.info("[Vencord] Installed React Developer Tools"))
-                    .catch(err => console.error("[Vencord] Failed to install React Developer Tools", err));
+                    .then(() => console.info("[Reshigged] Installed React Developer Tools"))
+                    .catch(err => console.error("[Reshigged] Failed to install React Developer Tools", err));
         } catch { }
 
 

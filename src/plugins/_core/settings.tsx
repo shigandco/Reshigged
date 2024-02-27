@@ -83,12 +83,12 @@ export default definePlugin({
         return [
             {
                 section: SectionTypes.HEADER,
-                label: "Vencord",
+                label: "Reshigged",
                 className: "vc-settings-header"
             },
             {
                 section: "VencordSettings",
-                label: "Vencord",
+                label: "Reshigged",
                 element: require("@components/VencordSettings/VencordTab").default,
                 className: "vc-settings"
             },
@@ -109,12 +109,6 @@ export default definePlugin({
                 label: "Updater",
                 element: require("@components/VencordSettings/UpdaterTab").default,
                 className: "vc-updater"
-            },
-            {
-                section: "VencordCloud",
-                label: "Cloud",
-                element: require("@components/VencordSettings/CloudTab").default,
-                className: "vc-cloud"
             },
             {
                 section: "VencordSettingsSync",
@@ -138,7 +132,7 @@ export default definePlugin({
     options: {
         settingsLocation: {
             type: OptionType.SELECT,
-            description: "Where to put the Vencord settings section",
+            description: "Where to put the Reshigged settings section",
             options: [
                 { label: "At the very top", value: "top" },
                 { label: "Above the Nitro section", value: "aboveNitro" },

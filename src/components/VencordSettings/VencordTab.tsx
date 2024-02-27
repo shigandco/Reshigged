@@ -31,8 +31,6 @@ import { SettingsTab, wrapTab } from "./shared";
 
 const cl = classNameFactory("vc-settings-");
 
-const DEFAULT_DONATE_IMAGE = "https://cdn.discordapp.com/emojis/1026533090627174460.png";
-const SHIGGY_DONATE_IMAGE = "https://media.discordapp.net/stickers/1039992459209490513.png";
 
 type KeysOfType<Object, Type> = {
     [K in keyof Object]: Object[K] extends Type ? K : never;
@@ -44,7 +42,6 @@ function VencordSettings() {
     });
     const settings = useSettings();
 
-    const donateImage = React.useMemo(() => Math.random() > 0.5 ? DEFAULT_DONATE_IMAGE : SHIGGY_DONATE_IMAGE, []);
 
     const isWindows = navigator.platform.toLowerCase().startsWith("win");
     const isMac = navigator.platform.toLowerCase().startsWith("mac");
@@ -101,8 +98,7 @@ function VencordSettings() {
         ];
 
     return (
-        <SettingsTab title="Vencord Settings">
-            <DonateCard image={donateImage} />
+        <SettingsTab title="Reshigged Settings">
             <Forms.FormSection title="Quick Actions">
                 <Card className={cl("quick-actions-card")}>
                     <React.Fragment>
@@ -127,12 +123,6 @@ function VencordSettings() {
                                 Open Settings Folder
                             </Button>
                         )}
-                        <Button
-                            onClick={() => VencordNative.native.openExternal("https://github.com/Vendicated/Vencord")}
-                            size={Button.Sizes.SMALL}
-                            disabled={settingsDirPending}>
-                            Open in GitHub
-                        </Button>
                     </React.Fragment>
                 </Card>
             </Forms.FormSection>
@@ -248,7 +238,7 @@ function NotificationSection({ settings }: { settings: typeof Settings["notifica
                 options={[
                     { label: "Only use Desktop notifications when Discord is not focused", value: "not-focused", default: true },
                     { label: "Always use Desktop notifications", value: "always" },
-                    { label: "Always use Vencord notifications", value: "never" },
+                    { label: "Always use Reshigged notifications", value: "never" },
                 ] satisfies Array<{ value: typeof settings["useNative"]; } & Record<string, any>>}
                 closeOnSelect={true}
                 select={v => settings.useNative = v}
@@ -311,29 +301,6 @@ function NotificationSection({ settings }: { settings: typeof Settings["notifica
 
 interface DonateCardProps {
     image: string;
-}
-
-function DonateCard({ image }: DonateCardProps) {
-    return (
-        <Card className={cl("card", "donate")}>
-            <div>
-                <Forms.FormTitle tag="h5">Support the Project</Forms.FormTitle>
-                <Forms.FormText>Please consider supporting the development of Vencord by donating!</Forms.FormText>
-                <DonateButton style={{ transform: "translateX(-1em)" }} />
-            </div>
-            <img
-                role="presentation"
-                src={image}
-                alt=""
-                height={128}
-                style={{
-                    imageRendering: image === SHIGGY_DONATE_IMAGE ? "pixelated" : void 0,
-                    marginLeft: "auto",
-                    transform: image === DEFAULT_DONATE_IMAGE ? "rotate(10deg)" : void 0
-                }}
-            />
-        </Card>
-    );
 }
 
 export default wrapTab(VencordSettings, "Vencord Settings");
