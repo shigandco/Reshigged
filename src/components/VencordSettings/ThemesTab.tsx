@@ -204,7 +204,6 @@ function ThemesTab() {
                 <Card className="vc-settings-card">
                     <Forms.FormTitle tag="h5">Find Themes:</Forms.FormTitle>
                     <div style={{ marginBottom: ".5em", display: "flex", flexDirection: "column" }}>
-                        <Forms.FormText>{"["}this button was removed because even mentioning anything about D*vilb*o would cause a memory leak to happen{"]"}</Forms.FormText>
                         <Link href="https://github.com/search?q=discord+theme">GitHub</Link>
                     </div>
                 </Card>
